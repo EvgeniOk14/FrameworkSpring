@@ -1,7 +1,8 @@
 package ru.geekbrain.example3sem3hometask.controllers;
-
+;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.geekbrain.example3sem3hometask.domain.User;
@@ -33,9 +34,18 @@ public class TaskController {
         return service.sortUsersByAge(service.getRepository().getUsers());
     }
 
-    //метод filterUsersByAge
-    //Подсказка  @GetMapping("/filter/{age}")
 
-    //метод calculateAverageAge
-    //Подсказка  @GetMapping("/calc")
+    /** добавил метод filterUsersByAge **/
+    @GetMapping("/filter/{age}") // localhost:8080/tasks/filter/25
+    public List<User> filterUsersByAge(@PathVariable int age) {
+        return service.filterUsersByAge(service.getRepository().getUsers(), age);
+    }
+
+    /** добавил метод calculateAverageAge**/
+    @GetMapping("/calc") // localhost:8080/tasks/calc
+    public double calculateAverageAge() {
+        return service.calculateAverageAge(service.getRepository().getUsers());
+    }
+
+
 }

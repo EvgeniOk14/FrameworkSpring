@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 import ru.geekbrain.example3sem3hometask.domain.User;
 
 @Service
-public class UserService {
+public class UserService
+{
 
     @Autowired
     private NotificationService notificationService;
@@ -15,7 +16,8 @@ public class UserService {
     //        this.notificationService = notificationService;
     //    }
 
-    public User createUser(String name, int age, String email) {
+    public User createUser(String name, int age, String email)
+    {
         User user = new User();
         user.setName(name);
         user.setAge(age);

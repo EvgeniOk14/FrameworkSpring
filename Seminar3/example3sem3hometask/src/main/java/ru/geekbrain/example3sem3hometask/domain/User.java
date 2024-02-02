@@ -1,10 +1,28 @@
 package ru.geekbrain.example3sem3hometask.domain;
 
-public class User {
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class User
+{
 
     private String name;
     private int age;
     private String email;
+
+    public User(String name, int age, String email)
+    {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+    }
+
+    public User()
+    {
+        //default constructor
+    }
 
     public String getName() {
         return name;

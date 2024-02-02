@@ -9,12 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserController
+{
+
     @Autowired
     private RegistrationService service;
 
     @GetMapping
-    public List<User> userList() { return service.getDataProcessingService().getRepository().getUsers(); }
+    public List<User> userList()
+    {
+        return service.getDataProcessingService().getRepository().getUsers();
+    }
+
 
     @PostMapping("/body")
     public String userAddFromBody(@RequestBody User user)
@@ -22,4 +28,5 @@ public class UserController {
         service.getDataProcessingService().getRepository().getUsers().add(user);
         return "User added from body!";
     }
+
 }

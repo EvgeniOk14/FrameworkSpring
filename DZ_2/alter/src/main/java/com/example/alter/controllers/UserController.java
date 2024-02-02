@@ -38,6 +38,7 @@ public class UserController
         return "showAllUsers";
     }
 
+
     /** переход на форму создания нового пользователя **/
     @GetMapping("/createFormUser")
     public  String formCreateUser(User user)
@@ -52,6 +53,8 @@ public class UserController
         userDAO.saveUser(user);
         return "redirect:/";
     }
+
+
     /** переход на форму редактирования **/
     @GetMapping("/updateUserForm/{id}")
     public String updateUserForm(Model model, @PathVariable("id") Integer id)

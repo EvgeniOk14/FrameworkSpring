@@ -1,0 +1,9 @@
+Курс: Framework Spring
+
+Домашняя работа №3
+
+
+1) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/Seminar3/example3sem3hometask <--- Ссылка на ДЗ №3
+
+
+   Выполнил: Е.В.Окишев

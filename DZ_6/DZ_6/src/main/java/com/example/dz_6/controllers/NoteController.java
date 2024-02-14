@@ -1,0 +1,96 @@
+package com.example.dz_6.controllers;
+
+import com.example.dz_6.models.Note;
+import com.example.dz_6.services.NoteService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+/** Добавление заметки. (Подсказка @PostMapping )
+ 2. Просмотр всех заметок.(Подсказка @GetMapping )
+ 3. Получение заметки по id. (Подсказка @GetMapping("/{id}") )
+ 4. Редактирование заметки.(Подсказка @PutMapping("/{id}") )
+ 5. Удаление заметки.(Подсказка @DeleteMapping("/{id}") )
+ **/
+
+
+@RestController
+@RequiredArgsConstructor
+public class NoteController
+{
+    //region Fields
+    @Autowired
+    private final NoteService noteService;
+    //endregion
+
+    /** Создание новой заметки **/
+    @PostMapping("/create")
+    public ResponseEntity<Note> createNote(@RequestBody Note note)
+    {
+        Note creatingNote = noteService.createNode(note);
+        return new ResponseEntity<>(noteService.createNode(note), HttpStatus.CREATED);
+    }
+
+    /** получить все заметки **/
+    @GetMapping("/")
+    public ResponseEntity<List<Note>> getAllNotes()
+    {
+        return new ResponseEntity<>(noteService.getAllNotes(), HttpStatus.OK);
+    }
+
+    /** обновить (редактировать) заметку **/
+    @PutMapping("/{id}")
+    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestParam Note note)
+    {
+      Note updatingNote = noteService.findNoteById(id);
+      if(updatingNote !=null)
+      {
+          updatingNote.setTitle(note.getTitle());
+          updatingNote.setContent(note.getContent());
+          noteService.saveNote(note);
+          return new ResponseEntity<>(noteService.updateNote(id, note), HttpStatus.OK);
+      }
+      else
+      {
+          return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Note());
+      }
+    }
+
+    /** Получить заметку по её id **/
+    @GetMapping("/{id}")
+    public ResponseEntity<Note> getNoteById(@PathVariable("id") Long id)
+    {
+        Note findingNote = noteService.findNoteById(id);
+        if(findingNote !=null)
+        {
+            return new ResponseEntity<>(noteService.findNoteById(id), HttpStatus.OK);
+        }
+        else
+        {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Note());
+        }
+    }
+
+    /**
+     * удалить заметку по её id
+     **/
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Note> deleteNote(@PathVariable("id") Long id)
+    {
+        Note deletingNote = noteService.findNoteById(id);
+        if(deletingNote != null)
+        {
+            noteService.deleteNote(deletingNote);
+            return ResponseEntity.ok().build();
+        }
+        else
+        {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Note());
+        }
+    }
+
+}

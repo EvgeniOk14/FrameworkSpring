@@ -3,22 +3,11 @@ package com.example.dz_6.controllers;
 import com.example.dz_6.models.Note;
 import com.example.dz_6.services.NoteService;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
-/** Добавление заметки. (Подсказка @PostMapping )
- 2. Просмотр всех заметок.(Подсказка @GetMapping )
- 3. Получение заметки по id. (Подсказка @GetMapping("/{id}") )
- 4. Редактирование заметки.(Подсказка @PutMapping("/{id}") )
- 5. Удаление заметки.(Подсказка @DeleteMapping("/{id}") )
- **/
-
 
 @RestController
 @AllArgsConstructor

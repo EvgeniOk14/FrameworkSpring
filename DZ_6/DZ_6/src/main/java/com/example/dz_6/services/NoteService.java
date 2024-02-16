@@ -2,19 +2,19 @@ package com.example.dz_6.services;
 
 import com.example.dz_6.models.Note;
 import com.example.dz_6.repositories.NoteRepository;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class NoteService
 {
     //region Fields
     @Autowired
-    private  final NoteRepository noteRepository;
+    private  NoteRepository noteRepository;
     //endRegion
 
 
@@ -57,6 +57,7 @@ public class NoteService
     /** создание новой заметки **/
     public Note createNode(Note note)
     {
+
       return noteRepository.save(note);
     }
 

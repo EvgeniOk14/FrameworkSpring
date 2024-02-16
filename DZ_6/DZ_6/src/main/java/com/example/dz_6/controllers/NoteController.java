@@ -2,10 +2,12 @@ package com.example.dz_6.controllers;
 
 import com.example.dz_6.models.Note;
 import com.example.dz_6.services.NoteService;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,19 +21,18 @@ import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class NoteController
 {
     //region Fields
     @Autowired
-    private final NoteService noteService;
+    private NoteService noteService;
     //endregion
 
     /** Создание новой заметки **/
     @PostMapping("/create")
     public ResponseEntity<Note> createNote(@RequestBody Note note)
     {
-        Note creatingNote = noteService.createNode(note);
         return new ResponseEntity<>(noteService.createNode(note), HttpStatus.CREATED);
     }
 
@@ -44,20 +45,9 @@ public class NoteController
 
     /** обновить (редактировать) заметку **/
     @PutMapping("/{id}")
-    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestParam Note note)
+    public ResponseEntity<Note> updateNote(@PathVariable("id") Long id, @RequestBody Note note)
     {
-      Note updatingNote = noteService.findNoteById(id);
-      if(updatingNote !=null)
-      {
-          updatingNote.setTitle(note.getTitle());
-          updatingNote.setContent(note.getContent());
-          noteService.saveNote(note);
-          return new ResponseEntity<>(noteService.updateNote(id, note), HttpStatus.OK);
-      }
-      else
-      {
-          return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Note());
-      }
+       return new  ResponseEntity<> (noteService.updateNote(id, note), HttpStatus.OK);
     }
 
     /** Получить заметку по её id **/
@@ -92,5 +82,4 @@ public class NoteController
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new Note());
         }
     }
-
 }

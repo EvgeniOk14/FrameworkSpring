@@ -2,6 +2,8 @@ package com.example.dz_6.models;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
 @Data
@@ -21,6 +23,7 @@ public class Note
     private String content;
 
     @Column(name = "localDateTime")
+    @CreationTimestamp
     private LocalDateTime localDateTime;
 
 }

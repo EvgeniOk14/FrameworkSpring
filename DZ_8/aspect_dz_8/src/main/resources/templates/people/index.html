@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Все люди</title>
+    <link href="/static/css/form.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table class="styled-table">
+    <thead>
+        <caption>список всех пользователей:</caption>
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${people}">
+        <td>
+            <a th:href="@{/people/{id}(id=${person.id})}" th:text="${person.name}">Имя</a>
+        </td>
+        <td th:text="${person.age}">Возраст</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<hr/>
+<div class="link-container">
+<a  th:href="@{/people/new}">Создать нового человека</a>
+</div>
+
+<div>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+</body>
+</html>
+

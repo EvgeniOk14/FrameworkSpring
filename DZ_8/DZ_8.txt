@@ -1,0 +1,78 @@
+курс: Framework java
+
+Домашнее задание №8
+
+
+1) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_8/aspect_dz_8
+
+выводы в консоль:
+2024-02-20T14:16:11.407+03:00  INFO 2772 --- [nio-8080-exec-8] c.e.a.controllers.PeopleController       : Handling new person request
+2024-02-20T14:16:17.830+03:00  INFO 2772 --- [io-8080-exec-10] c.e.a.controllers.PeopleController       : Handling create person request
+User action: Method save of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:18.039+03:00  INFO 2772 --- [nio-8080-exec-1] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:19.729+03:00  INFO 2772 --- [nio-8080-exec-4] c.e.a.controllers.PeopleController       : Handling show request for person with id: 3
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:21.431+03:00  INFO 2772 --- [nio-8080-exec-5] c.e.a.controllers.PeopleController       : Handling edit request for person with id: 3
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:25.986+03:00  INFO 2772 --- [nio-8080-exec-7] c.e.a.controllers.PeopleController       : Handling update request for person with id: 3
+User action: Method update of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:26.128+03:00  INFO 2772 --- [nio-8080-exec-8] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:28.109+03:00  INFO 2772 --- [io-8080-exec-10] c.e.a.controllers.PeopleController       : Handling show request for person with id: 3
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:30.775+03:00  INFO 2772 --- [nio-8080-exec-3] c.e.a.controllers.PeopleController       : Handling delete request for person with id: 3
+User action: Method delete of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:31.005+03:00  INFO 2772 --- [nio-8080-exec-4] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:33.765+03:00  INFO 2772 --- [nio-8080-exec-5] c.e.a.controllers.PeopleController       : Handling show request for person with id: 1
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:35.421+03:00  INFO 2772 --- [nio-8080-exec-7] c.e.a.controllers.PeopleController       : Handling refuse request
+2024-02-20T14:16:35.434+03:00  INFO 2772 --- [nio-8080-exec-8] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:36.830+03:00  INFO 2772 --- [io-8080-exec-10] c.e.a.controllers.PeopleController       : Handling show request for person with id: 1
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:38.864+03:00  INFO 2772 --- [nio-8080-exec-3] c.e.a.controllers.PeopleController       : Handling refuse request
+2024-02-20T14:16:38.871+03:00  INFO 2772 --- [nio-8080-exec-4] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:40.668+03:00  INFO 2772 --- [nio-8080-exec-5] c.e.a.controllers.PeopleController       : Handling show request for person with id: 1
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:41.725+03:00  INFO 2772 --- [nio-8080-exec-7] c.e.a.controllers.PeopleController       : Handling refuse request
+2024-02-20T14:16:41.731+03:00  INFO 2772 --- [nio-8080-exec-8] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:16:42.741+03:00  INFO 2772 --- [io-8080-exec-10] c.e.a.controllers.PeopleController       : Handling new person request
+2024-02-20T14:17:24.078+03:00  INFO 2772 --- [nio-8080-exec-4] c.e.a.controllers.PeopleController       : Handling create person request
+User action: Method save of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:17:24.253+03:00  INFO 2772 --- [nio-8080-exec-2] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:17:25.862+03:00  INFO 2772 --- [nio-8080-exec-6] c.e.a.controllers.PeopleController       : Handling show request for person with id: 4
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:17:28.062+03:00  INFO 2772 --- [nio-8080-exec-8] c.e.a.controllers.PeopleController       : Handling edit request for person with id: 4
+User action: Method show of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:17:29.680+03:00  INFO 2772 --- [io-8080-exec-10] c.e.a.controllers.PeopleController       : Handling update request for person with id: 4
+User action: Method update of class com.example.aspect_dz_8.dao.PersonDAO called.
+2024-02-20T14:17:29.811+03:00  INFO 2772 --- [nio-8080-exec-1] c.e.a.controllers.PeopleController       : Handling index request
+User action: Method index of class com.example.aspect_dz_8.dao.PersonDAO called.
+
+
+ 2) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_8/web_shop  <--- ссылка на задачу со звёздочкой
+
+    выполнил:Е.В.Окишев
+
+
+  (ДЛЯ ПРОВЕРЯЮЩЕГО ПРЕПОДАВАТЕЛЯ: 
+	2я задача со звёздочкой, создал основной проект в основной структуре которого находиться блок web_shop, и также в 	проект встроены два микросервиса: inventory-service и payment-servise
+ 	Приложение запускаеться, т.е. все сервисы работают, через postman по Get запросу работают оба адреса: 	http://localhost:8081/api/inventory/all 
+	и
+	http://localhost:8080/api/products !!!!!!!      
+        Но когда я посылаю Post запрос на адрес:http://localhost:8081/api/inventory/reserve/2?quantity=1  с телом запроса:
+ {
+   "quantity": 1
+ } 
+  то  postman  не выводит ошибки а вечно показывает надпись sending request
+  Я так понимаю ошибка может быть в адресе запроса, но запрос вроде как коректный!
+  Просьба к преподавателю: подскажите где и в чём ошибкаи как это исправить?)  
+
+
+
+

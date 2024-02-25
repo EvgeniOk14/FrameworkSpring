@@ -1,0 +1,16 @@
+Курс Framework Spring
+
+Домашняя работа №9
+
+0) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_9/demo <--- Eureka Server (порт 8761)
+
+1) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_8/aspect_dz_8 <--- сервис1 (service_dz8 порт 8081)
+
+2) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_6/DZ_6  <--- сервис2 (servis_dz6 порт 8082) 
+
+3) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_9/apiGateAway <--- Gateway (порт 8090) 
+
+4) 
+
+
+  выполнил: Е.В.Окишев

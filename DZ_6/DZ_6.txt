@@ -1,0 +1,45 @@
+Курс Framework
+
+Домашняя работа №6
+
+1) https://github.com/EvgeniOk14/SpringFrom6Seminar/tree/main/Seminar6/Exam3Sem6_RickAmdMortiAPI <--- решение задачи со *
+
+2) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_6/DZ_6 <--- ссылка на решние обязательного задания дз-6
+
+
+Вопрос для преподавателя(по обязатеьному решению задания №6 ---> ссылка №2):
+
+При запуске приложения постоянно возникает следующая ошибка:
+--------------------------------------------------------------------------------------------------------------------------
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-02-14T11:23:27.238+03:00 ERROR 3832 --- [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method eventPublicationRegistry in org.springframework.modulith.events.config.EventPublicationAutoConfiguration required a single bean, but 2 were found:
+	- jpaEventPublicationRepository: defined by method 'jpaEventPublicationRepository' in class path resource [org/springframework/modulith/events/jpa/JpaEventPublicationAutoConfiguration.class]
+	- jdbcEventPublicationRepository: defined by method 'jdbcEventPublicationRepository' in class path resource [org/springframework/modulith/events/jdbc/JdbcEventPublicationAutoConfiguration.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
+--------------------------------------------------------------------------------------------------------------------------
+
+ Не понимаю в чём проблема? 
+ Приложение вроде всё на мой взгляд правильно и должно работать, там вроде ни чего сложного нет, я такие уже делал и  здавал. 
+ Что за конфликт двух бинов? 
+ Каких бинов, не понимаю, потратил 2 дня на это, реально не знаю как этот вопрос решить, помогите пожалуйста!!!
+ Я написал Вам в телеграмм, но думаю что там вы редко скорее всего бываете, решил сдать работу, что бы Вы быстрее  проверили и ответили мне решив данную проблему.
+ Я препробовал всё что знал и даже больше, обращался к ИИ и читал на разных сайтах, ни чего не решило данный вопрос, поэтому убедительная просьба: напишите подробно по шагам, что мне и конкретно где нужно сделать, что бы проект стал запускаться и данной ошибки больше не возникало, заранее благодарю!
+
+ Выполнил: Е.В.Окишев

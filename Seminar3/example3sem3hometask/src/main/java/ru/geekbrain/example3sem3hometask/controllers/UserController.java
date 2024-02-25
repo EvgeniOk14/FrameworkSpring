@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrain.example3sem3hometask.domain.User;
 import ru.geekbrain.example3sem3hometask.services.RegistrationService;
-
 import java.util.List;
 
 @RestController

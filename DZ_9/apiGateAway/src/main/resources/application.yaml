@@ -1,0 +1,16 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: Microservice1
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/service_dz8/**
+        - id: Microservice2
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/service_dz6/**

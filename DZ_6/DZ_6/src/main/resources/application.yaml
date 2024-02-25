@@ -1,0 +1,31 @@
+# Port
+server:
+  port: 8082
+spring:
+  application:
+    name: service2_dz6
+# DataSource
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: oew
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl.auto: update
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+# Thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+
+
+
+
+

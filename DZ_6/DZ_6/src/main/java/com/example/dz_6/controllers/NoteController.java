@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @AllArgsConstructor
@@ -16,17 +18,20 @@ public class NoteController
     //region Fields
     @Autowired
     private NoteService noteService;
+
+    private static final Logger logger = LoggerFactory.getLogger(NoteController.class);
     //endregion
 
     /** Создание новой заметки **/
     @PostMapping("/create")
     public ResponseEntity<Note> createNote(@RequestBody Note note)
     {
+        logger.info("Received POST request to create a new note with title: {}", note.getTitle());
         return new ResponseEntity<>(noteService.createNode(note), HttpStatus.CREATED);
     }
 
     /** получить все заметки **/
-    @GetMapping("/")
+    @GetMapping("/showAll")
     public ResponseEntity<List<Note>> getAllNotes()
     {
         return new ResponseEntity<>(noteService.getAllNotes(), HttpStatus.OK);

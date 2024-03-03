@@ -25,6 +25,15 @@ spring:
     encoding: UTF-8
     mode: HTML
 
+# Management Endpoints Exposure
+management:
+  endpoints:
+    web:
+      exposure:
+        include: metrics, prometheus, health, env, info
+  endpoint:
+    health:
+      show-details: always
 
 
 

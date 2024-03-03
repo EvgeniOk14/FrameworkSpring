@@ -1,0 +1,8 @@
+курс: Framework Spring
+
+Домашняя работа №11
+
+
+
+1) https://github.com/EvgeniOk14/FrameworkSpring/tree/main/DZ_6/DZ_6   <--- общая ссылка на ДЗ №11
+

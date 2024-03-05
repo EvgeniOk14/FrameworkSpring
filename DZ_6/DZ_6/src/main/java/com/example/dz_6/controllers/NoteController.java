@@ -1,6 +1,7 @@
 package com.example.dz_6.controllers;
 
 import com.example.dz_6.models.Note;
+import com.example.dz_6.services.FileGateway;
 import com.example.dz_6.services.NoteService;
 import io.micrometer.core.instrument.Counter;
 import lombok.AllArgsConstructor;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +25,8 @@ public class NoteController
     @Autowired
     private NoteService noteService;
 
+    private final FileGateway fileGateway;
+
     private final Counter counter = Metrics.counter("my_count");
     private static final Logger logger = LoggerFactory.getLogger(NoteController.class);
     //endregion
@@ -31,8 +36,10 @@ public class NoteController
     public ResponseEntity<Note> createNote(@RequestBody Note note)
     {
         logger.info("Received POST request to create a new note with title: {}", note.getTitle());
+        fileGateway.writeToFile(note.getTitle() + ".txt", note.toString());
         return new ResponseEntity<>(noteService.createNode(note), HttpStatus.CREATED);
     }
+
 
     /** получить все заметки **/
     @GetMapping("/showAll")
